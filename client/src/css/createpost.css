@@ -1,0 +1,69 @@
+.create{
+
+padding:40px;
+background:#f4f7fc;
+min-height:100vh;
+
+}
+
+.create h1{
+
+margin-bottom:25px;
+
+}
+
+.create input,
+.create textarea,
+.create select{
+
+width:100%;
+padding:15px;
+margin-bottom:20px;
+border-radius:10px;
+border:1px solid #ddd;
+font-size:16px;
+
+}
+
+.platform{
+
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:15px;
+margin-bottom:20px;
+
+}
+
+.platform label{
+
+background:white;
+padding:15px;
+border-radius:10px;
+box-shadow:0 3px 10px rgba(0,0,0,.1);
+
+}
+
+.buttons{
+
+display:flex;
+gap:20px;
+
+}
+
+.buttons button{
+
+flex:1;
+padding:15px;
+border:none;
+border-radius:10px;
+background:#4338ca;
+color:white;
+cursor:pointer;
+
+}
+
+.buttons button:hover{
+
+background:#312e81;
+
+}

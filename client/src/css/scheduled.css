@@ -1,0 +1,15 @@
+.schedule{
+
+padding:40px;
+
+}
+
+.schedule-card{
+
+width:400px;
+padding:25px;
+background:white;
+border-radius:15px;
+box-shadow:0 5px 15px rgba(0,0,0,.1);
+
+}
