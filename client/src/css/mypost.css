@@ -1,46 +1,182 @@
-.mypost{
-
-padding:40px;
-background:#f5f7fb;
-min-height:100vh;
-
+.myposts {
+  min-height: 100vh;
+  padding: 32px 38px;
+  background: #eef2f7;
 }
 
-table{
-
-width:100%;
-border-collapse:collapse;
-background:white;
-border-radius:15px;
-overflow:hidden;
-box-shadow:0 5px 15px rgba(0,0,0,.1);
-
+.myposts h1 {
+  margin: 0 0 6px;
+  font-size: 26px;
+  font-weight: 600;
+  color: #17212f;
 }
 
-th{
-
-background:#4338ca;
-color:white;
-padding:15px;
-
+.myposts::before {
+  content: "Manage and track all your social media content";
+  display: block;
+  color: #7b8490;
+  font-size: 13px;
+  margin-bottom: 25px;
 }
 
-td{
 
-padding:15px;
-text-align:center;
-border-bottom:1px solid #ddd;
+.myposts table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
 
+  background: #ffffff;
+
+  border: 1px solid #dce2e8;
+  border-radius: 8px;
+
+  overflow: hidden;
+
+  box-shadow: 0 3px 10px rgba(30, 45, 60, 0.06);
 }
 
-td button{
 
-padding:8px 15px;
-margin:5px;
-border:none;
-background:#4338ca;
-color:white;
-border-radius:8px;
-cursor:pointer;
+.myposts th {
+  padding: 14px 18px;
+
+  background: #243447;
+  color: #ffffff;
+
+  text-align: left;
+
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+}
+
+.myposts td {
+  padding: 15px 18px;
+
+  border-bottom: 1px solid #edf0f3;
+
+  text-align: left;
+
+  color: #4b5563;
+  font-size: 13px;
+
+  vertical-align: middle;
+}
+
+.myposts tbody tr:nth-child(even) {
+  background: #fafbfd;
+}
+
+.myposts tbody tr:hover {
+  background: #f1f6fc;
+}
+
+.myposts tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.myposts td:first-child {
+  color: #202833;
+  font-weight: 600;
+}
+
+.myposts td:nth-child(2) {
+  color: #596575;
+}
+
+
+
+.post-image {
+  width: 82px;
+  height: 55px;
+
+  object-fit: cover;
+
+  display: block;
+
+  border-radius: 5px;
+  border: 1px solid #dce2e8;
+}
+
+
+.myposts td:nth-child(4) {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+
+.myposts td:nth-child(4) {
+  color: #2563eb;
+}
+
+
+.myposts td:nth-child(5) {
+  color: #697482;
+  font-size: 12px;
+}
+
+
+
+.myposts td:last-child {
+  white-space: nowrap;
+}
+
+
+.myposts td button {
+  width: auto;
+
+  padding: 7px 13px;
+  margin: 0 5px 0 0;
+
+  border-radius: 4px;
+
+  border: 1px solid #d5dbe2;
+
+  background: #ffffff;
+  color: #46515e;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.myposts td button:hover {
+  background: #edf3fb;
+  border-color: #a9bfdc;
+  color: #1d4f91;
+}
+
+
+.myposts td button:last-child {
+  color: #b04444;
+  border-color: #e2caca;
+}
+
+.myposts td button:last-child:hover {
+  background: #fff4f4;
+  border-color: #d9a5a5;
+}
+
+
+.myposts td[colspan] {
+  padding: 55px 20px;
+  text-align: center;
+  color: #89929d;
+}
+
+
+
+@media (max-width: 800px) {
+
+  .myposts {
+    padding: 25px 18px;
+    overflow-x: auto;
+  }
+
+  .myposts table {
+    min-width: 760px;
+  }
 
 }

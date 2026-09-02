@@ -1,101 +1,99 @@
-import {useEffect,useState} from "react";
-import axios from "axios";
+import { useEffect, useState } from "react";
+import api from "../api";
 import "../css/mypost.css";
 
 function MyPosts() {
+  const [posts, setPosts] = useState([]);
 
-const posts=[
+  useEffect(() => {
+    fetchPosts();
+  }, []);
 
-{
-id:1,
-title:"Summer Sale",
-platform:"Instagram",
-status:"Published",
-date:"20 July"
-},
+  const fetchPosts = async () => {
+    try {
+      const response = await api.get("/posts");
+      setPosts(response.data);
+    } catch (error) {
+      console.log(error);
+      alert("Unable to fetch posts");
+    }
+  };
 
-{
-id:2,
-title:"New Product Launch",
-platform:"Facebook",
-status:"Scheduled",
-date:"25 July"
-},
+  return (
+    <div className="myposts">
 
-{
-id:3,
-title:"Festive Offer",
-platform:"LinkedIn",
-status:"Draft",
-date:"28 July"
-}
+      <h1>My Posts</h1>
 
-];
+      <table>
 
-return(
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Platform</th>
+            <th>Media</th>
+            <th>Status</th>
+            <th>Date</th>
+            <th>Action</th>
+          </tr>
+        </thead>
 
-<div className="myposts">
+        <tbody>
 
-<h1>My Posts</h1>
+          {posts.length > 0 ? (
+            posts.map((item) => (
+              <tr key={item._id}>
 
-<table>
+                <td>{item.title}</td>
 
-<thead>
+                <td>
+                  {Array.isArray(item.platforms)
+                    ? item.platforms.join(", ")
+                    : item.platform}
+                </td>
 
-<tr>
+                <td>
+                  {item.media ? (
+                    <img
+                      src={item.media}
+                      alt={item.title}
+                      className="post-image"
+                    />
+                  ) : (
+                    "No Image"
+                  )}
+                </td>
 
-<th>Title</th>
+                <td>{item.status}</td>
 
-<th>Platform</th>
+                <td>
+                  {item.scheduleDate
+                    ? new Date(item.scheduleDate).toLocaleDateString()
+                    : item.createdAt
+                    ? new Date(item.createdAt).toLocaleDateString()
+                    : "-"}
+                </td>
 
-<th>Status</th>
+                <td>
+                  <button>Edit</button>
+                  <button>Delete</button>
+                </td>
 
-<th>Date</th>
+              </tr>
+            ))
+          ) : (
+            <tr>
+              <td colSpan="6">
+                No posts found
+              </td>
+            </tr>
+          )}
 
-<th>Action</th>
+        </tbody>
 
-</tr>
+      </table>
 
-</thead>
-
-<tbody>
-
-{
-
-posts.map((item)=>(
-
-<tr key={item.id}>
-
-<td>{item.title}</td>
-
-<td>{item.platform}</td>
-
-<td>{item.status}</td>
-
-<td>{item.date}</td>
-
-<td>
-
-<button>Edit</button>
-
-<button>Delete</button>
-
-</td>
-
-</tr>
-
-))
-
-}
-
-</tbody>
-
-</table>
-
-</div>
-
-);
-
+    </div>
+  );
 }
 
 export default MyPosts;

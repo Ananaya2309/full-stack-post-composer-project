@@ -1,3 +1,4 @@
+import api from "../api";
 import axios from "axios";
 import { useState } from "react";
 import "../css/createpost.css";
@@ -33,35 +34,62 @@ function CreatePost() {
   };
 
   const handlePublish = async () => {
+
+if (status === "Scheduled") {
+  if (!date) {
+    alert("Please select a schedule date");
+    return;
+  }
+
+  if (!time) {
+    alert("Please select a schedule time");
+    return;
+  }
+}
     try {
-      const response = await axios.post(
-        "http://localhost:5000/api/posts",
-        {
-          title,
-          description,
-          platforms,
-          status,
-          scheduleDate: date,
-          scheduleTime: time,
-        }
-      );
+    let mediaData = "";
 
-      alert("Post Created Successfully");
+    if (media) {
+      mediaData = await new Promise((resolve, reject) => {
+        const reader = new FileReader();
 
-      setTitle("");
-      setDescription("");
-      setMedia(null);
-      setPlatforms([]);
-      setStatus("Draft");
-      setDate("");
-      setTime("");
+        reader.onload = () => resolve(reader.result);
+        reader.onerror = reject;
 
-      console.log(response.data);
-    } catch (error) {
-      console.log(error);
-      alert("Server Error");
+        reader.readAsDataURL(media);
+      });
     }
-  };
+
+    const response = await api.post(
+  "/posts",
+      {
+        title,
+        description,
+        media: mediaData,
+        platforms,
+        status,
+        scheduleDate: date,
+        scheduleTime: time,
+      }
+    );
+
+    alert("Post Created Successfully");
+
+    setTitle("");
+    setDescription("");
+    setMedia(null);
+    setPlatforms([]);
+    setStatus("Draft");
+    setDate("");
+    setTime("");
+
+    console.log(response.data);
+
+  } catch (error) {
+    console.log(error);
+    alert("Server Error");
+  }
+};
 
   return (
     <div className="create">

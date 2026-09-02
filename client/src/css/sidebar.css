@@ -1,0 +1,109 @@
+.sidebar {
+  width: 235px;
+  height: 100vh;
+
+  position: fixed;
+  left: 0;
+  top: 0;
+
+  background: #202b38;
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+
+  border-right: 1px solid #303c49;
+  z-index: 1000;
+}
+
+.sidebar-logo {
+  height: 75px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  border-bottom: 1px solid #34404d;
+}
+
+.logo-box {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-right: 10px;
+
+  background: #2563eb;
+  border-radius: 5px;
+
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.sidebar-logo h2 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.sidebar-logo span {
+  font-size: 10px;
+  color: #9ba6b2;
+}
+
+.sidebar nav {
+  padding: 18px 12px;
+}
+
+.sidebar nav a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 11px 13px;
+  margin-bottom: 5px;
+
+  border-radius: 4px;
+
+  color: #b9c2cc;
+  text-decoration: none;
+
+  font-size: 13px;
+}
+
+.sidebar nav a:hover {
+  background: #2b3948;
+  color: white;
+}
+
+.sidebar nav a.active {
+  background: #2d4054;
+  color: white;
+  border-left: 3px solid #3b82f6;
+}
+
+.sidebar-bottom {
+  margin-top: auto;
+  padding: 15px 12px;
+  border-top: 1px solid #34404d;
+}
+
+.sidebar-bottom button {
+  width: 100%;
+  padding: 11px 13px;
+
+  background: transparent;
+  border: none;
+
+  color: #b9c2cc;
+  font-size: 13px;
+
+  cursor: pointer;
+  text-align: left;
+}
+
+.sidebar-bottom button:hover {
+  color: white;
+  background: #2b3948;
+}

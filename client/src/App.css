@@ -2,111 +2,139 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Segoe UI", sans-serif;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
 }
 
 body {
-  background: linear-gradient(135deg, #667eea, #764ba2);
-  min-height: 100vh;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #f5f6f8;
+  color: #1f2937;
 }
+
+/* Remove default button styling conflicts */
+
+button,
+input,
+textarea,
+select {
+  font-family: inherit;
+}
+
+/* Common page container */
 
 .app {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   min-height: 100vh;
-  padding: 20px;
+  background: #f5f6f8;
 }
+
+/* Common white card */
 
 .card {
-  width: 500px;
   background: #ffffff;
-  padding: 30px;
-  border-radius: 18px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  box-shadow: none;
 }
 
-.card h1 {
-  text-align: center;
-  color: #4f46e5;
-  font-size: 42px;
-  font-weight: 700;
-  margin-bottom: 25px;
-  line-height: 1.2;
-  letter-spacing: 1px;
+/* Headings */
+
+h1,
+h2,
+h3 {
+  color: #111827;
 }
 
-label {
-  font-weight: 600;
-  color: #333;
-}
+/* Inputs */
 
+input,
+textarea,
 select {
-  width: 100%;
-  padding: 12px;
-  margin-top: 10px;
-  margin-bottom: 20px;
-  border-radius: 10px;
-  border: 2px solid #ddd;
   outline: none;
-  font-size: 16px;
 }
 
+input:focus,
+textarea:focus,
 select:focus {
-  border-color: #4f46e5;
+  border-color: #2563eb;
 }
 
-textarea {
-  width: 100%;
-  min-height: 180px;
-  padding: 15px;
-  border-radius: 12px;
-  border: 2px solid #ddd;
-  resize: none;
-  outline: none;
-  font-size: 16px;
-  line-height: 1.5;
-}
-
-textarea:focus {
-  border-color: #4f46e5;
-}
-
-.counter {
-  margin-top: 10px;
-  text-align: right;
-  font-weight: bold;
-  color: #555;
-}
-
-.success {
-  color: green;
-  margin-top: 10px;
-}
-
-.error {
-  color: red;
-  margin-top: 10px;
-}
+/* Buttons */
 
 button {
-  width: 100%;
-  margin-top: 20px;
-  padding: 14px;
-  border: none;
-  border-radius: 10px;
-  background: #4f46e5;
-  color: white;
-  font-size: 17px;
   cursor: pointer;
-  transition: 0.3s;
-}
-
-button:hover {
-  background: #3730a3;
 }
 
 button:disabled {
-  background: gray;
   cursor: not-allowed;
+}
+
+/* Links */
+
+a {
+  text-decoration: none;
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f5f6f8;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.app-layout {
+  min-height: 100vh;
+  width: 100%;
+}
+
+.main-content {
+  margin-left: 287px;
+  min-height: 100vh;
+  width: calc(100% - 287px);
+  overflow-x: hidden;
+}
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+.app-layout {
+  min-height: 100vh;
+  width: 100%;
+}
+
+.page-content {
+  margin-left: 287px;
+  min-height: 100vh;
+  width: calc(100% - 287px);
 }

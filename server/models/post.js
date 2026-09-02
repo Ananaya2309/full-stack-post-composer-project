@@ -24,16 +24,24 @@ const postSchema = new mongoose.Schema(
     ],
 
     status: {
-      type: String,
-      default: "Draft",
-    },
+  type: String,
+  enum: ["Draft", "Published", "Scheduled"],
+  default: "Draft",
+},
 
     scheduleDate: {
-      type: String,
-    },
+  type: String,
+  default: "",
+},
 
-    scheduleTime: {
-      type: String,
+scheduleTime: {
+  type: String,
+  default: "",
+},
+    user: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
+      required: true,
     },
   },
   {

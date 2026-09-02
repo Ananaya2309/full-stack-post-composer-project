@@ -1,26 +1,121 @@
-.draft{
 
-padding:40px;
 
+.draft {
+  min-height: 100vh;
+  padding: 32px 38px;
+  background: #eef2f6;
+  color: #20242a;
 }
 
-.draft-card{
 
-width:400px;
-padding:25px;
-background:white;
-border-radius:15px;
-box-shadow:0 5px 15px rgba(0,0,0,.1);
+.draft::before {
+  content: "Content / Drafts";
+  display: block;
+  margin-bottom: 5px;
 
+  color: #89929e;
+  font-size: 11px;
 }
 
-.draft-card button{
+.draft h1 {
+  margin: 0 0 25px;
 
-margin-top:20px;
-padding:12px 20px;
-background:#4338ca;
-color:white;
-border:none;
-border-radius:10px;
+  color: #17212f;
+  font-size: 26px;
+  font-weight: 600;
+}
+
+
+.draft-card {
+  width: 100%;
+  max-width: 620px;
+
+  padding: 0;
+
+  background: #ffffff;
+
+  border: 1px solid #dce2e8;
+  border-radius: 7px;
+
+  box-shadow: 0 3px 10px rgba(30, 45, 60, 0.06);
+
+  overflow: hidden;
+}
+
+.draft-card::before {
+  content: "DRAFT";
+  display: block;
+
+  padding: 9px 18px;
+
+  background: #f4f6f8;
+  border-bottom: 1px solid #e3e7eb;
+
+  color: #697482;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+}
+.draft-card h2,
+.draft-card h3 {
+  margin: 20px 22px 8px;
+
+  color: #202833;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.draft-card p {
+  margin: 0 22px;
+
+  color: #727c88;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+
+.draft-card button {
+  margin: 22px;
+
+  padding: 10px 18px;
+
+  background: #2563eb;
+  color: #ffffff;
+
+  border: none;
+  border-radius: 4px;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.draft-card button:hover {
+  background: #1d4ed8;
+}
+
+
+.draft {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.draft-card + .draft-card {
+  margin-top: 14px;
+}
+
+
+@media (max-width: 700px) {
+
+  .draft {
+    padding: 25px 18px;
+  }
+
+  .draft-card {
+    max-width: 100%;
+  }
 
 }
